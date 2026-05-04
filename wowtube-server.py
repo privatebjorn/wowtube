@@ -23,12 +23,25 @@ import signal
 import socket
 import threading
 import time
+import certifi
 
 from server.config import init_config, get_config, ServerConfig
 from server.handlers import dispatch
 from server.ftp_server import start_ftp_server, stop_ftp_server
 from server.worker import start_pool, stop_pool
 from server import auth
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+# Point SSL to the bundled certifi certificates
+os.environ['SSL_CERT_FILE'] = resource_path('cacert.pem')
 
 # ---------------------------------------------------------------------------
 # Logging setup
