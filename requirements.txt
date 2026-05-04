@@ -1,0 +1,4 @@
+yt-dlp==2026.3.17
+pyftpdlib==2.2.0
+pandas==3.0.2
+Pillow==12.2.0
