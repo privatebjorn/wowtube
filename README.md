@@ -6,6 +6,9 @@ https://youtu.be/3-8mGFq9UhE
 
 ![Demo WowTube](wowtube-demo.png)
 
+## Downloads 
+https://github.com/privatebjorn/wowtube/releases/tag/V1.0.0 
+
 ## Features
 
 - YouTube video search and download
